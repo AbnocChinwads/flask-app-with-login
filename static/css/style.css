@@ -17,6 +17,16 @@ body {
 .heading-style-uppercase {
     text-transform: uppercase;
 }
+/*--------------------------------------------------------- Navbar*/
+
+.input-label {
+    margin-left: 1rem;
+    margin-top: .5rem;
+}
+
+input {
+    margin-right: .5rem;
+}
 
 /*--------------------------------------------------------- Switch*/
 
