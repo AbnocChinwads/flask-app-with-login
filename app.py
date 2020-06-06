@@ -1,8 +1,18 @@
 import os
-from flask import Flask, redirect, render_template, request, session, url_for
+from os import path
+from flask import Flask, render_template, redirect, request, url_for
+from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+if path.exists("env.py"):
+    import env
 
 app = Flask(__name__)
-app.secret_key = os.getrandom(16)
+
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY")
+app.config["MONGO_DBNAME"] = "third_milestone_project"
+app.config["MONGO_URI"] = os.getenv("MONGO_URI")
+
+mongo = PyMongo(app)
 
 
 @app.route("/", methods=["GET", "POST"])
